@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <iframe src="https://onedrive.live.com/embed?cid=1710D00724E45050&amp;resid=1710D00724E45050%21107&amp;authkey=AK4dOQb5dMR_ldw&amp;em=2&amp;wdAr=1.775" width="350px" height="221px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+  <div id="adobe-dc-view" style="height: 360px; width: 500px;"></div>
+<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+<script type="text/javascript">
+  document.addEventListener("adobe_dc_view_sdk.ready", function(){
+    var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+    adobeDCView.previewFile({
+      content:{ location: 
+        { url: "https://documentcloud.adobe.com/view-sdk-demo/PDFs/Bodea%20Brochure.pdf"}},
+      metaData:{fileName: "Bodea Brochure.pdf"}
+    },
+    {
+      embedMode: "SIZED_CONTAINER"
+    });
+  });
+</script>
 </body>
 </html>
